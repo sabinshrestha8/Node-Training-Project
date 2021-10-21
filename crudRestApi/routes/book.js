@@ -3,19 +3,19 @@ const router = express.Router();
 
 const BookController = require('../controller/BookController');
 
-// get all categories
+// get all books
 router.get('/api/books', BookController.viewBook);
 
-// create New category
+// create New book
 router.post('/api/books', BookController.addBook);
 
-// get a single category
+// get a single book
 router.get('/api/books/:id', BookController.viewSingleBook);
 
-// Update a category
+// Update a book
 router.put('/api/books/:id', BookController.updateBook);
 
-// delete a category
+// delete a book
 router.delete('/api/books/:id', BookController.deleteBook);
 
 module.exports = router;
