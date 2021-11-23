@@ -6,32 +6,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 
-// // validation
-// const Joi = require('@hapi/joi');
-
-// const schema = Joi.object({
-//     name: Joi.string()
-//         .min(6)
-//         .required(),
-//     email: Joi.string()
-//         .min(6)
-//         .required()
-//         .email(),
-//     password: Joi.string()
-//         .min(6)
-//         .required()
-// });
-
 // Register a user, request method: POST
 router.post('/register', async (req, res) => {
-
-    // // validate the data before registering user
-    // const { error } =  schema.validate(req.body);
-    // // res.send(error.details[0].message);
-    // if (error) {
-    //     return res.status(400).send(error.details[0].message)
-    // }
-
     // Lets validate the data before creating user
     const {error} = registerValidation(req.body);
     if (error) {
